@@ -1,0 +1,30 @@
+export interface Property{
+    property_seller_id:string ;
+    title:string ;
+    propertytype:string ;
+    price:string ;
+    image:string ;
+    city:string ;
+    area:string ;
+    bedrooms:string ;
+    address:string ;
+    actiontype:string ;
+};
+export interface PropertyResponse{
+    property_id:string ;
+    property_seller_id:string ;
+    title:string ;
+    propertytype:string ;
+    price:string ;
+    image:string ;
+    city:string ;
+    area:string ;
+    bedrooms:string ;
+    address:string ;
+    actiontype:string ;
+    rating:string ;
+    photo:string;
+    fullname:string;
+    userid:string;
+    created_at:Date ;
+};
