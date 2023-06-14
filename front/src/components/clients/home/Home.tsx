@@ -46,7 +46,7 @@ export default function Home() {
   const dispatch=useAppDispatch();
   useEffect(()=>{
     dispatch(showProperties({seller_id:"null",orderBy:orderBy,bedrooms:bedrooms,
-    city:city,actiontype:actiontype,propertytype:propertytype,area:area}));
+    city:city,actiontype:actiontype,propertytype:propertytype,area:area,customSearch}));
   },[dispatch,orderBy,bedrooms,city,actiontype,propertytype,customSearch,area]);
     
 

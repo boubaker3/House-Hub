@@ -6,8 +6,7 @@ import DemandsIcon from '@mui/icons-material/CheckCircle';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Link, Outlet, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { photos_url } from '../../photos_url';
- 
-
+  
 export default function BackOffice() {
     const [value, setValue] = React.useState<number|null>(0);
     const Logo =  require('../../assets/logo.png');

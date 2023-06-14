@@ -21,6 +21,7 @@ export const userDataSlice =createSlice({
     city: "",
     address: "",
     bio: "",
+    accepted: "",
     rating: ""},
     wasUpdated:'',
     isLoading: false,

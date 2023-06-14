@@ -22,13 +22,7 @@ export default function Seller() {
     const open = Boolean(anchorEl);
     const user = JSON.parse(localStorage.getItem("user") ?? "");
 const dispatch=useAppDispatch();
-const userdata=useSelector((state:RootState)=>state.userdata.data);
-    
-useEffect(()=>{
-  
-  dispatch(getUserdata(user.userid));
  
-},[]);
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
       setValue(newValue);
     };
@@ -67,7 +61,7 @@ useEffect(()=>{
       <Grid item xs={2} sx={{width:"100%", height: "100vh", borderRight: 1, borderColor: "divider",position:"fixed"  }}>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }} mt={2}>
           <Avatar src={Logo} sx={{ borderRadius: 0 }} />
-          <Typography sx={{ ml: 1, fontSize: "14px",display:{xs:"none",lg:"flex"} }}>House Hub</Typography>
+          <Typography sx={{ ml: 1, fontSize: "14px",display:{xs:"none",lg:"flex"} }}>Dar-na</Typography>
         </Box>
         <Divider sx={{ mt: 4 }} />
         <Tabs
@@ -89,7 +83,7 @@ useEffect(()=>{
           {menuData.map((menuItem, index) => (
             <Tab
             component={Link}
-            to={"/owner/"+menuItem.title}
+            to={menuItem.title=="Profile"?"/owner/"+menuItem.title+"?userid="+user.userid:"/owner/"+menuItem.title}
             key={index}
               label={
                 <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -121,7 +115,7 @@ useEffect(()=>{
   <AddCircleIcon sx={{color:"white"}}/>
 </Box> 
 </Link>
-        <Avatar src={`${photos_url}${userdata.photo}`}></Avatar>
+        <Avatar src={`${photos_url}${user.photo}`}></Avatar>
         <Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}

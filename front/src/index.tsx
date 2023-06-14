@@ -10,11 +10,12 @@ const theme = createTheme({
       main: "#18273d",
     },
     secondary: {
-      main: "#509F67" 
+      main: "#249e48" 
     } 
   }, 
    typography: {
-    fontFamily: 'Inter',
+    fontFamily: 'Outfit',
+    
     h2: {
       fontSize: '2rem',
     },

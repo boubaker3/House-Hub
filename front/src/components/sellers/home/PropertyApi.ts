@@ -15,7 +15,7 @@ interface PropertyFilter{
 export const showProperties =createAsyncThunk("property/showProperties",async(propertyFilter:PropertyFilter)=>{
     const response = await api.get(`showProperties?seller_id=${propertyFilter.seller_id}&city=${propertyFilter.city}
                             &bedrooms=${propertyFilter.bedrooms}&area=${propertyFilter.area}&actiontype=${propertyFilter.actiontype}
-                            &propertytype=${propertyFilter.propertytype}&orderBy=${propertyFilter.orderBy}`)
+                            &propertytype=${propertyFilter.propertytype}&customSearch=${propertyFilter.customSearch}&orderBy=${propertyFilter.orderBy}`)
         return response.data
                   
 });

@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { RootState,useAppDispatch } from "../../../store";
 import {login} from './LoginApi';
 import { useNavigate } from 'react-router-dom';
+import { getUserdata } from '../../profiles/UserdataApi';
 interface LoginFormValues {
    email: string;
   password: string; 
@@ -33,6 +34,7 @@ export default function Login() {
     const user=useSelector((state:RootState):User =>state.auth.user)
     const token=useSelector((state:RootState)=>state.auth.token)
     const is_logged=useSelector((state:RootState)=>state.auth.is_logged)
+    const userdata=useSelector((state:RootState)=>state.userdata.data)
 
     const handleChange=(event:any)=>{
       const {name,value}=event.target
@@ -54,7 +56,13 @@ export default function Login() {
             if (result.payload.user.role === 'admin') {
               navigate('/admin/owners');
             } else if (result.payload.user.role === 'seller') {
-              navigate('/owner/home');
+              dispatch(getUserdata(result.payload.user));
+              if(userdata.accepted=="1"){
+                navigate('/owner/home');
+              }else{
+                localStorage.clear();
+                setError("this user is not accepted yet!");
+              }
             } else {
               navigate('/client/home');
             }

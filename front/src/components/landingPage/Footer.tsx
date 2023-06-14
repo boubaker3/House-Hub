@@ -29,7 +29,7 @@ const Footer = () => {
         <Grid item xs={12} md={4}>
           <Grid container alignItems="center">
             <img src={Logo} alt="Logo" style={logoStyles} />
-            <Typography variant="h6">House Hub</Typography>
+            <Typography variant="h6">Dar-na</Typography>
           </Grid>
         <Grid item xs={12} display='flex' mt={4}>
             <Phone sx={{ marginRight: '5px' }} />
@@ -37,7 +37,7 @@ const Footer = () => {
           </Grid>
         <Grid item xs={12} display='flex' mt={2}>
             <Email sx={{ marginRight: '5px' }} />
-            <Typography variant="body2" sx={{ marginRight: '10px' }}>demo@gmail.com</Typography>
+            <Typography variant="body2" sx={{ marginRight: '10px' }}>darna@gmail.com</Typography>
           </Grid>
         <Grid item xs={12} display='flex' mt={2}>
             <LocationOn sx={{ marginRight: '5px' }} />

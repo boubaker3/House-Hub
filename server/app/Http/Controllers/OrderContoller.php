@@ -10,11 +10,15 @@ class OrderContoller extends Controller
 {
     public function store(Request $request)
     {
-        Order::create([
-            'sender_id' =>  $request->sender_id,
-            'receiver_id' => $request->receiver_id,
-            'property_id' => $request->property_id
-        ]);
+        $res = Order::where("sender_id", $request->sender_id)->where("receiver_id", $request->receiver_id)
+            ->where("property_id", $request->property_id)->first();
+        if (empty($res)) {
+            Order::create([
+                'sender_id' =>  $request->sender_id,
+                'receiver_id' => $request->receiver_id,
+                'property_id' => $request->property_id
+            ]);
+        }
 
         return response()->json(['res' => "your order was sent successfully"]);
     }

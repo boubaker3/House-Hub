@@ -20,7 +20,7 @@ export default function Auth() {
      
             <Grid item xs={12}>  
             <Avatar sx={{borderRadius:0,width:"150px",height:'auto',margin:"auto"}} src={logo}></Avatar>
-            <Typography sx={{textAlign:'center',color:"white"}} variant='h4'>House Hub</Typography>
+            <Typography sx={{textAlign:'center',color:"white"}} variant='h4'>Darna</Typography>
             </Grid>  
             <Grid item xs={12}>  
             <Avatar  sx={{borderRadius:0,width:"60%",height:'auto',margin:"auto"}} src={authCover}></Avatar>

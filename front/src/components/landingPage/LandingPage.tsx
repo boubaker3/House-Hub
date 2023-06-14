@@ -24,11 +24,11 @@ import WhyChooseUs from './WhyChooseUs';
     };
   return (
      
-<Grid container rowGap={2}  p={2}> 
+<Grid container rowGap={2}  p={2} id='Home'> 
   <Grid item xs={12} md={4} lg={6} >
   <Box display="flex" alignItems="center" >
       <Avatar src={Logo} sx={{borderRadius:0}} />
-      <Typography variant="h6" component="h2" sx={{marginLeft: "1rem"}} color='primary'>House hub</Typography>
+      <Typography variant="h6" component="h2" sx={{marginLeft: "1rem"}} color='primary'>DAR-NA</Typography>
     </Box>
   </Grid>
   <Grid item xs={12} md={7} lg={5}  >
@@ -39,8 +39,13 @@ import WhyChooseUs from './WhyChooseUs';
   scrollButtons="auto"
  TabIndicatorProps={{
     sx: {
-     height: "100%",
-      borderRadius:"32px", zIndex:-1,
+      position: "absolute",
+      backgroundColor: "transparent",
+      
+      width: "100%",
+      height: "auto",
+      maxWidth: "100%",
+      borderRadius:  "0px"
        },
   }}
 >
@@ -49,15 +54,20 @@ import WhyChooseUs from './WhyChooseUs';
     key={index}
       label={menuItem.title 
       }
-      href=""
+      href={"#"+menuItem.title}
       {...a11yProps(index)}
       sx={{
-      fontWeight:"bold",
-      color: "black",
+        zIndex: "100",
+        color: "#ffffff !important",
+        fontSize: "13px",
+        letterSpacing: "1.5px",
+        marginRight: "10px"
+    ,
         "&.Mui-selected": {
-          color: "white"
-        }
-      }}
+          borderBottom: 'white 2px solid' ,
+          transform: 'scale(1.1)'
+        },
+              }}
        
       
       />
@@ -65,12 +75,20 @@ import WhyChooseUs from './WhyChooseUs';
 </Tabs>
   </Grid>
   <Grid item xs={12} sx={{overflow:"hidden"}}>
-      <Home/>
+      <Home />
       <WhyChooseUs/>  
+       <Grid id='Services'>
     <Services/>
+    </Grid>
+    <Grid id='Reviews'>
     <Reviews/>  
+    </Grid>
+    <Grid id='#Contact'>
     <Contact/>  
+    </Grid>
+    <Grid id='#Faqs'>
      <Faq/>  
+     </Grid>
     <Footer/>  
    </Grid>
 

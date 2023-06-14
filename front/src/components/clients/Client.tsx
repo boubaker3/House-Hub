@@ -85,7 +85,7 @@ console.log(localStorage.getItem("user"))
           {menuData.map((menuItem, index) => (
             <Tab
             component={Link}
-            to={"/client/"+menuItem.title}
+            to={menuItem.title=="Profile"?"/client/"+menuItem.title+"?userid="+user.userid:"/client/"+menuItem.title}
             key={index}
               label={
                 <Box sx={{ display: "flex", alignItems: "center" }}>
